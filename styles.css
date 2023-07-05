@@ -49,7 +49,7 @@ q:before, q:after {
 }
 
 #title { /* using flexbox to center title within #title */
-	max-width:100vw;
+	width:100%;
 	height: 100vh;
 	background-image:url("assets/title.jpg");
 	background-position: center center;
@@ -58,16 +58,25 @@ q:before, q:after {
 	display: flex;
 	justify-content: center;
 	align-items: center ;
-	filter: blur(5px);
-
+	z-index: -1;
 }
+
+
+
+#title h1 {
+  position: absolute;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(5px);
+}
+
 
 title {
 	display: flex;
 	justify-content: center;
 	text-align: center;
 	color: white;
-	filter: blur(0px);
+	filter: none;
 }
 
 #deforestation-container{

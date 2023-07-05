@@ -133,14 +133,22 @@ var layout = {
     margin: { l: 10, r: 10, t: 80, b: 10 },
     geo:{
        scope: 'world',
+       projection:{
+        type: 'Equirectangular'
+    },
+    mapbox: {
+      center: {
+        lat: 28,
+        lon: -84
+      },
+    },
        countrycolor: 'rgb(255, 255, 255)',
        showland: true,
        landcolor: 'rgb(217, 217, 217)',
        showlakes: true,
        lakecolor: 'rgb(255, 255, 255)',
        subunitcolor: 'rgb(255, 255, 255)',
-       lonaxis: {},
-       lataxis: {},
+       
     },
     updatemenus: [{
       x: 0.1,
@@ -246,7 +254,7 @@ var data = [{
       zauto: false, //so that it doesn't automatically change between each frame
       colorbar: {
         ticksuffix: 't',
-        tickformat: ',',  // Add a comma as a thousands separator
+        tickformat: ',',  // Add a comma as a thousands separator, larger numbers are more impactful on audience
       }
 }];
 
@@ -259,6 +267,9 @@ var layout = {
     margin: { l: 10, r: 10, t: 80, b: 10 },
     geo:{
        scope: 'world',
+       projection:{
+                  type: 'Equirectangular'
+              },
        countrycolor: 'rgb(255, 255, 255)',
        showland: true,
        landcolor: 'rgb(217, 217, 217)',
@@ -333,6 +344,8 @@ var layout = {
 
 Plotly.newPlot('production-chloro', data, layout).then(function() {
     Plotly.addFrames('production-chloro', frames);
+    var animationButton = document.querySelector('.updatemenu > .buttons > .btn:first-child');
+animationButton.click();
   });
 })
 
