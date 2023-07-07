@@ -23,7 +23,7 @@ time, mark, audio, video {
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: flex; /* I feel most confident using flexbox */
+	display: block; 
 }
 
 body {
@@ -46,38 +46,44 @@ q:before, q:after {
 	margin: 0;
 	padding: 0;
 	box-sizing:border-box; /*easier to calculate margins and padding */
+	font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
 
 #title { /* using flexbox to center title within #title */
 	width:100%;
 	height: 100vh;
-	background-image:url("assets/title.jpg");
-	background-position: center center;
+	background-image:url("assets/chris-charles-MTh5767B1rs-unsplash.jpg");
 	background-repeat: no-repeat;
-	background-attachment: fixed; /*create somewhat of a parallax scrolling effect to keep reader engaged*/
 	display: flex;
 	justify-content: center;
-	align-items: center ;
-	z-index: -1;
+	align-items: center;
+	padding:2rem;
+	flex-direction: column;
+	background-size: cover;
+	background-position-y: 70%;
+	
 }
 
 
+.tint {
+	background-color: rgba(0,0,0,.4);
+	background-blend-mode: multiply;
+  }
 
 #title h1 {
-  position: absolute;
   text-align: center;
   color: white;
-  backdrop-filter: blur(5px);
+  font-size:5em;
+  font-weight:800;
 }
 
-
-title {
-	display: flex;
-	justify-content: center;
+#title h2 {
 	text-align: center;
 	color: white;
-	filter: none;
-}
+	font-size:3em;
+	font-weight:600;
+	margin:1.5rem;
+  }
 
 #deforestation-container{
 	width:100%;
@@ -90,18 +96,105 @@ title {
 	overflow: hidden;    /* hide any content that goes beyond the rounded corners*/
 	padding:10px;
 	min-height:50vh;
+	max-width:35%;
 }
 
-#introText, #production-pie-chart {
+#production-pie-chart {
 	margin:2em;
 	width:50%;
 }
 
+#pieText{
+	width:100%;
+	margin:2em;
+	text-align: center;
+	flex-direction: column;
+}
+
+#pieCard {
+	background-color: white;
+	margin:2rem 2rem;
+	width:100%;
+}
+
+#introCard {
+	background-color: white;
+	margin:2rem auto; /*auto center on the page*/
+	width: 50rem;
+	flex-direction: column;
+	text-align: center;
+	padding: 2rem 2rem;
+	border-radius: 10px;
+	display:flex;
+	flex-direction: row;
+
+}
+
+#introCard h2{
+	margin-bottom: 1rem;
+}
+
+
 h1{
 	width:100%;
 	text-align: center;
+	font: weight 900px;;
 }
 
+#introWrapperL {
+    margin-right: 2rem;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#introWrapperL h2 [
+
+
+]
+
+#introWrapperL p [
+
+
+]
+
+#introWrapperR {
+	width:20%;
+
+}
+
+
+#introWrapperR figure img{
+	width:200px;
+}
+
+.fun-fact {
+	width:100%;
+	background-color: white;
+	text-align: center;
+	padding: 2em;
+	color: rgb(158, 44, 44);
+	font-weight: bold;
+}
+
+h2{
+	font-weight:bold;
+	font-family: Noto Sans;
+}
+
+#background { /* using flexbox to center title within #title */
+	width:100%;
+	background-image:url("assets/title.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed; /*create somewhat of a parallax scrolling effect to keep reader engaged*/
+	display: flex;
+	justify-content: center;
+	align-items: center ;
+	z-index: -1;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
 #doubleChloro{
 	display:flex; /* to display graphs side by side*/
