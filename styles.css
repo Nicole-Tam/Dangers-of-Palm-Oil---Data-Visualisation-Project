@@ -117,12 +117,10 @@ q:before, q:after {
 	width:100%;
 }
 
-#introCard {
+.card {
 	background-color: white;
 	margin:2rem auto; /*auto center on the page*/
 	width: 50rem;
-	flex-direction: column;
-	text-align: center;
 	padding: 2rem 2rem;
 	border-radius: 10px;
 	display:flex;
@@ -130,8 +128,29 @@ q:before, q:after {
 
 }
 
-#introCard h2{
-	margin-bottom: 1rem;
+.cardCol{
+	background-color: white;
+	margin:2rem auto; /*auto center on the page*/
+	width: 50rem;
+	padding: 2rem 2rem;
+	border-radius: 10px;
+	display:flex;
+	flex-direction: column;
+}
+
+p {
+	line-height:120%;
+}
+
+
+.card h2, .cardCol h2 {
+	margin-bottom:1rem
+
+}
+
+figcaption{
+	text-align:center;
+	font-size:0.7em;
 }
 
 
@@ -149,22 +168,6 @@ h1{
 
 }
 
-#introWrapperL h2 [
-
-
-]
-
-#introWrapperL p [
-
-
-]
-
-#introWrapperR {
-	width:20%;
-
-}
-
-
 #introWrapperR figure img{
 	width:200px;
 }
@@ -173,17 +176,31 @@ h1{
 	width:100%;
 	background-color: white;
 	text-align: center;
-	padding: 2em;
+	padding: 4em 0;
 	color: rgb(158, 44, 44);
 	font-weight: bold;
+	line-height: 1.2;
 }
 
 h2{
 	font-weight:bold;
 	font-family: Noto Sans;
+	
 }
 
-#background { /* using flexbox to center title within #title */
+h2 a{
+	font-weight:bold;
+	font-family: Noto Sans;
+	color: rgb(158, 44, 44);
+
+}
+
+
+
+#intro { /* using flexbox to center title within #title */
+	background-image:url("assets/title.jpg");
+}
+.background{
 	width:100%;
 	background-image:url("assets/title.jpg");
 	background-repeat: no-repeat;
@@ -194,6 +211,7 @@ h2{
 	z-index: -1;
 	flex-direction: column;
 	justify-content: space-between;
+	padding: 3em 0;
 }
 
 #doubleChloro{
