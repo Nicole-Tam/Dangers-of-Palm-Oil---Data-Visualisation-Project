@@ -125,12 +125,17 @@ var data = [{
 }];
 
 var layout = {
+  margin: {
+    l: 0,
+    r: 0,
+    b: 0,
+    t: 50,
+    pad: 2
+},
     title: {
       text: 'Exported Deforestation (Hectares)',
     },
-    width: 900,
-    height: 600,
-    margin: { l: 10, r: 10, t: 80, b: 10 },
+autosize:true,
     geo:{
        scope: 'world',
        projection:{
@@ -142,12 +147,6 @@ var layout = {
         lon: -84
       },
     },
-       countrycolor: 'rgb(255, 255, 255)',
-       showland: true,
-       landcolor: 'rgb(217, 217, 217)',
-       showlakes: true,
-       lakecolor: 'rgb(255, 255, 255)',
-       subunitcolor: 'rgb(255, 255, 255)',
        
     },
     updatemenus: [{
@@ -264,7 +263,6 @@ var layout = {
     },
     width: 900,
     height: 600,
-    margin: { l: 10, r: 10, t: 80, b: 10 },
     geo:{
        scope: 'world',
        projection:{
