@@ -29,9 +29,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
-	list-style: none;
-}
 blockquote, q {
 	quotes: none;
 }e
@@ -142,6 +139,7 @@ q:before, q:after {
 
 p {
 	line-height:1.2;
+	margin:1em 0;
 }
 
 
@@ -216,7 +214,7 @@ h2 a{
 }
 
 .background{
-	width:100vw;
+	width:100%;
 	background-repeat: no-repeat;
 	display: flex;
 	justify-content: center;
@@ -225,6 +223,25 @@ h2 a{
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 3em 0;
+}
+
+.images{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.images figure img{
+	height:200px;
+}
+
+.images figure{
+	margin:1em;
+}
+
+
+p > a {
+	color:black;
 }
 
 .noBg{
@@ -248,10 +265,11 @@ h2 a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding:4rem;
+	padding:2rem;
 	flex-direction: column;
 	background-size: cover;
 	background-position-x: 50%; /*center when resized */
+	width:100%;
 }
 
 #palmOilIndustry {
@@ -260,7 +278,22 @@ h2 a{
 
 #chloroText {
 	font-size:1.1em;
+	margin-top: 0;
 
+}
+
+
+.sources {
+	line-height:normal;
+}
+
+.sources li {
+	margin-left: 2rem;
+	color:#2A3129
+}
+
+.sources li a {
+	color:#2A3129
 }
 
 

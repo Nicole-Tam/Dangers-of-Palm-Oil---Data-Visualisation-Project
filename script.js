@@ -15,7 +15,7 @@ Plotly.d3.csv("data/productionPieChart.csv", production_data => {
       insidetextorientation: "radial",
       type: 'pie',
       marker: {
-        colors: ['green', 'orange']
+        colors: ['#005A31', '#FF8C01']
       }
     }
   ];
@@ -46,9 +46,8 @@ Plotly.d3.csv("data/oil-yield-by-crop-2020.csv", yield_data => {
       x: Yield,
       y: Oil,
       orientation: 'h',
-
       marker: {
-        colors: ['green', 'orange']
+        color: '#005A31'
       }
     }
   ];
@@ -72,13 +71,15 @@ Plotly.d3.csv("data/land-use-for-vegetable-oil-crops-cleaned.csv", harvested_dat
       labels: oilHarvest,
       parents: oilHarvest.map(() => ''), // Set an empty parent for all oil types, because each node needs to have it's own parent node on the same heirarchy as other parent nodes.
       values: areaHarvest,
-    }
+      
+    },
+    
   ];
 
   var layout = {
     title: 'Land Use for Vegetable Oil (2020)',
-    treemapcolorway: ["green,orange"],
     autosize: true,
+    treemapcolorway: ["rgb(255, 177, 80)", "rgb(255, 140, 0)", "rgb(255, 165, 0)", "rgb(255, 120, 0)", "rgb(255, 200, 0)", "rgb(255, 69, 0)",]// color combination makes palm oil bright red, more noticable
   };
 
   Plotly.newPlot('harvest-treemap', data, layout);
@@ -116,7 +117,11 @@ Plotly.d3.csv("data/exported-deforestation.csv", function(err, rows){ // adapted
 var data = [{
       type: 'choropleth',
       locationmode: 'world',
-      colorscale: 'Jet',
+      colorscale: [
+        [0, 'white'],
+        [0.2, '#94C58C'],
+        [1, '#094F29'] 
+    ],
       locations: frames[0].data[0].locations,
       z: frames[0].data[0].z,
       text: frames[0].data[0].text,
@@ -249,7 +254,10 @@ Plotly.d3.csv("data/palm-oil-production-chloro.csv", function(err, rows){ // ada
 var data = [{
       type: 'choropleth',
       locationmode: 'world',
-      colorscale: 'Jet',
+      colorscale: [
+        [0, 'rgb(255, 200, 0)'],
+        [1, 'rgb(255, 0, 0)'] 
+    ],
       locations: frames[0].data[0].locations,
       z: frames[0].data[0].z,
       text: frames[0].data[0].text,
