@@ -34,7 +34,7 @@ ol, ul {
 }
 blockquote, q {
 	quotes: none;
-}
+}e
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -62,6 +62,7 @@ q:before, q:after {
 	flex-direction: column;
 	background-size: cover;
 	background-position-y: 70%;
+	background-position-x: 50%;
 }
 
 .tint {
@@ -90,17 +91,15 @@ q:before, q:after {
 
 
 #production-pie-chart {
-	background-color: rgba(209, 209, 209, 0.5);
+	background-color: rgb(255, 255, 255);
 	border-radius: 10px;
 	overflow: hidden;    /* hide any content that goes beyond the rounded corners*/
-	padding:10px;
-	min-height:50vh;
-	max-width:35%;
 }
 
 #production-pie-chart {
-	margin:2em;
-	width:50%;
+ margin-left:2em;
+ width: 30rem;
+ background-color: rgb(255,255,255);
 }
 
 #pieText{
@@ -111,8 +110,7 @@ q:before, q:after {
 }
 
 #pieCard {
-	background-color: white;
-	margin:2rem 2rem;
+	margin:2rem 0rem;
 	width:100%;
 }
 
@@ -127,11 +125,16 @@ q:before, q:after {
 
 }
 
+.wide {
+	width:90%; /*percentages allow for easier transition between mobile and desktop. This made it so I didn't need media queries for mobile view*/
+	justify-content: center;
+}
+
 .cardCol{
 	background-color: white;
 	margin:2rem auto; /*auto center on the page*/
 	width: 50rem;
-	padding: 2rem 2rem;
+	padding: 1.6rem 2rem;
 	border-radius: 10px;
 	display:flex;
 	flex-direction: column;
@@ -148,7 +151,8 @@ p {
 }
 
 .card h3, .cardCol h3 {
-	margin:1rem 0 0.75rem 0;
+	margin:0 0 0.75rem 0;
+	line-height: normal;
 }
 
 figcaption{
@@ -165,7 +169,7 @@ h1{
 
 #introWrapperL {
     margin-right: 2rem;
-    justify-content: space-evenly;
+    justify-content: center;
     display: flex;
     flex-direction: column;
 
@@ -208,10 +212,11 @@ h2 a{
 	flex-direction: column;
 	background-size: cover;
 	background-position-y: 70%;
+	background-position-x: 50%;
 }
 
 .background{
-	width:100%;
+	width:100vw;
 	background-repeat: no-repeat;
 	display: flex;
 	justify-content: center;
@@ -220,6 +225,20 @@ h2 a{
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 3em 0;
+}
+
+.noBg{
+	background-color: transparent;
+}
+
+#pieWrapperL {
+	background-color:white;
+	padding:2em 1.5em;
+	border-radius:10px;
+	margin: auto 0 ;
+	width:50%;
+    display: flex;
+    flex-direction: column;
 }
 
 #palmOilIntro { /* using flexbox to center title within #title */
@@ -232,22 +251,42 @@ h2 a{
 	padding:4rem;
 	flex-direction: column;
 	background-size: cover;
-	background-position-y: 70%;
+	background-position-x: 50%; /*center when resized */
 }
 
-#doubleChloro{
+#palmOilIndustry {
+	font-size: 1.4em;
+}
+
+#chloroText {
+	font-size:1.1em;
+
+}
+
+
+.chloro {
+	width:90vw;
+	padding-top:2.5rem;
+}
+
+.doubleGraph{
 	display:flex; /* to display graphs side by side*/
 	justify-content: space-evenly;
-	height:80vh;
+	width:100%;
+	margin:2rem auto;
+	padding:1rem;
+	background-color: white;
+	border-radius: 10px;
+
 }
 
-#expD, #production-chloro {
-
+#expD, #production-chloro, #harvest-treemap, #yield-bar-chart {
+	padding:1em;
 	width: 50%;
 }
 
 .js-plotly-plot,
 .plot-container {
 	max-width: 50vw;
-          height: 44vh
+	height: 44vh
 }

@@ -10,6 +10,9 @@ Plotly.d3.csv("data/productionPieChart.csv", production_data => {
     {
       values: production,
       labels: region,
+      textinfo: "label+percent",
+      textposition: "inside",
+      insidetextorientation: "radial",
       type: 'pie',
       marker: {
         colors: ['green', 'orange']
@@ -17,11 +20,11 @@ Plotly.d3.csv("data/productionPieChart.csv", production_data => {
     }
   ];
 
-  var layout = {
-      height:500,
+  var layout = { //decided not to set width and height values, instead setting in css as it autoresizes better without strict values
       title: {
-      text: 'Palm Oil Production (2020)',
+      text: 'Palm Oil Production in Tonnes (2020)',
     },
+    showlegend: false,
     paper_bgcolor: 'rgba(0, 0, 0, 0)',  // transparent background and plot
     plot_bgcolor: 'rgba(0, 0, 0, 0)'
   }
@@ -73,7 +76,7 @@ Plotly.d3.csv("data/land-use-for-vegetable-oil-crops-cleaned.csv", harvested_dat
   ];
 
   var layout = {
-    title: 'Land Use for Vegetable Oil',
+    title: 'Land Use for Vegetable Oil (2020)',
     treemapcolorway: ["green,orange"],
     autosize: true,
   };
@@ -258,24 +261,29 @@ var data = [{
 }];
 
 var layout = {
+  margin: {
+    l: 0,
+    r: 0,
+    b: 0,
+    t: 50,
+    pad: 2
+},
     title: {
-      text: 'Palm Oil Production (Tonnes)',
+      text: 'Palm oil production (Tonnes)',
     },
-    width: 900,
-    height: 600,
+autosize:true,
     geo:{
        scope: 'world',
        projection:{
-                  type: 'Equirectangular'
-              },
-       countrycolor: 'rgb(255, 255, 255)',
-       showland: true,
-       landcolor: 'rgb(217, 217, 217)',
-       showlakes: true,
-       lakecolor: 'rgb(255, 255, 255)',
-       subunitcolor: 'rgb(255, 255, 255)',
-       lonaxis: {},
-       lataxis: {},
+        type: 'Equirectangular'
+    },
+    mapbox: {
+      center: {
+        lat: 28,
+        lon: -84
+      },
+    },
+       
     },
     updatemenus: [{
       x: 0.1,
@@ -291,10 +299,10 @@ var layout = {
         args: [null, {
           fromcurrent: true,
           transition: {
-            duration: 100, //sped up because of how much more data there is available for this chloropleth compared to the other
+            duration: 200,
           },
           frame: {
-            duration: 100
+            duration: 500
           }
         }],
         label: "Play"
@@ -334,7 +342,7 @@ var layout = {
         }
       },
       transition: {
-        duration: 100,
+        duration: 300,
         easing: "cubic-in-out"
       }
     }]

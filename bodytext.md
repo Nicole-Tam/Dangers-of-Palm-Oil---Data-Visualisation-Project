@@ -1,4 +1,9 @@
+    <aside class="fun-fact">
 
+        <h2> Did you know?<br> <a
+                href=https://www.nih.gov/news-events/nih-research-matters/orangutan-genome-sequenced>Orangutans and
+                humans share 97% of their DNA</a></h2>
+    </aside>
 Approximately 61.5% of original orangutan habitats will be destroyed by 2025.
 https://earth.org/?endangered-species=orangutan
 
