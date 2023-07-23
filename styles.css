@@ -139,7 +139,6 @@ q:before, q:after {
 
 p {
 	line-height:1.2;
-	margin:1em 0;
 }
 
 
@@ -167,7 +166,6 @@ h1{
 
 #introWrapperL {
     margin-right: 2rem;
-    justify-content: center;
     display: flex;
     flex-direction: column;
 
